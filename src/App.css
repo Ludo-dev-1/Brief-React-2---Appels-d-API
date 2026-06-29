@@ -16,7 +16,9 @@
     outline-offset: 2px;
   }
 }
-
+ul, li{
+  cursor: pointer;
+}
 .hero {
   position: relative;
 
