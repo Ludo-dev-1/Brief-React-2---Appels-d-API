@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📚 Book Explorer (React)
+Application web développée avec React permettant d’afficher une liste de livres et de consulter leurs détails via une navigation dynamique.
 
-Currently, two official plugins are available:
+🚀 Fonctionnalités : 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+📖 Affichage d’une liste de livres depuis une API externe
+🔗 Navigation entre les pages grâce à React Router
+📄 Page de détails dynamique pour chaque livre
+⚡ Chargement des données via fetch
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🛠️ Technologies utilisées : 
 
-## Expanding the ESLint configuration
+React (avec hooks)
+React Router
+TypeScript
+Fetch API
+OpenLibrary API
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+⚙️ Installation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Cloner le projet : 
+```bash
+git clone <url-du-repo>
+cd <nom-du-projet>
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Installer les dépendances :
+```bash
+npm install
 ```
+Lancer l’application :
+```bash
+npm run dev
+```
+
+🧠 Fonctionnement
+
+✅ Books.tsx
+
+Récupère les livres via fetchBookMethod
+Stocke les données avec useState
+Affiche les titres sous forme de liste
+Chaque livre est cliquable (navigation vers détails)
+
+✅ fetchBookMethod.ts
+
+Contient une méthode fetchBook
+Appelle l’API OpenLibrary et retourne les données JSON
+
+✅ index.tsx
+
+Configure le router avec createBrowserRouter
+Définit les routes de l’application
